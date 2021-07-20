@@ -1,0 +1,28 @@
+<%- include ('./_layouts/header') %>
+<link rel="stylesheet" href="/public/css/style.css">
+    <div class="row products">
+        <% hoas.forEach((hoa) => { %> 
+            <div class="col-xs-12 col-md-4 p">
+                <a href="/products/<%= hoa.category %>/<%= hoa.slug %>" class="pa">
+                    <img src="/product_images/<%= hoa._id %>/<%= hoa.image %>" alt="<%= hoa.slug %>" class="pimage">
+                </a>
+                <h4><%= hoa.title %></h4>
+                <h4 class="priceColor"><%= hoa.price %> VND</h4>
+                <a href="/products/<%= hoa.category %>/<%= hoa.slug %>" class="vd">Xem chi tiết</a>
+                <% if (loggedIn) { %> 
+                    <p>
+                        <a href="/cart/add/<%= hoa.slug %>">
+                            <button class="btn btn-primary">
+                                Thêm vào giỏ hàng
+                            </button>
+                        </a>
+                        <a href="/cart/checkout">
+                            <img src="/images/gio_hang.jpg" alt="check-cart" width="40px" height="40px">
+                        </a>
+                    </p>
+                <% } %>
+            </div>
+        <% }); %>
+    </div>
+
+<%- include ('./_layouts/footer')%>

@@ -1,0 +1,25 @@
+<%- include ('../_layouts/admin_header') %>
+    <h2 class="page-title">Danh muc hoa</h2>
+    <a href="/admin/categories/add-category" class="btn btn-primary">Them loai hoa moi</a>
+    <br><br>
+
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Loai hoa</th>
+                <th>Sua</th>
+                <th>Xoa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% loaihoa.forEach((loaihoa) => { %>
+                <tr>
+                    <td><%= loaihoa.title %></td>
+                    <td><a href="categories/edit-category/<%= loaihoa._id %>">Sua</a></td>
+                    <td><a class="confirmDelete" href="categories/delete-category/<%= loaihoa._id %>">Xoa</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+<%- include ('../_layouts/admin_footer') %>

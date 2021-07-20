@@ -1,0 +1,47 @@
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <hr>
+        <p class="text-center">&copy; Bai Tap Thuc Hanh - 18521292</p>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="/js/main.js"></script>
+        <script>
+            var slideIndex_1 = 0;
+            var slideIndex_2 = 0;
+            var slideIndex_3 = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides_1 = document.getElementsByClassName("mySlides_1");
+              var slides_2 = document.getElementsByClassName("mySlides_2");
+              var slides_3 = document.getElementsByClassName("mySlides_3");
+              for (i = 0; i < slides_1.length; i++) {
+                slides_1[i].style.display = "none";  
+                slides_2[i].style.display = "none"; 
+                slides_3[i].style.display = "none"; 
+              }
+              slideIndex_1++;
+              slideIndex_2++;
+              slideIndex_3++;
+
+              if (slideIndex_1 > slides_1.length) {slideIndex_1 = 1}   
+              if (slideIndex_2 > slides_2.length) {slideIndex_2 = 1}   
+              if (slideIndex_3 > slides_3.length) {slideIndex_3 = 1}  
+
+              slides_1[slideIndex_1 - 1].style.display = "block";  
+              slides_2[slideIndex_2 - 1].style.display = "block"; 
+              slides_3[slideIndex_3 - 1].style.display = "block"; 
+              setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+        </script>
+    </body>
+</html>

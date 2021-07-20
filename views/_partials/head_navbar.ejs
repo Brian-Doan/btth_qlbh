@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 navbar-inverse">
+    <div class="container" style="max-width: 90%;">
+        <!-- Logo -->
+        <a href="/" class="navbar-brand"> Bai Tap Thuc Hanh </a>
+
+        <!-- Official Navbar -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav nav">
+                <% pages.forEach((page) => { %> 
+                    <% if (page.slug == "home") { %> 
+                        <li><a class="ml-4 mr-4" href="/"><%= page.title %></a></li>
+                    <% } else { %>
+                        <li><a class="ml-4 mr-4" href="/<%= page.slug %>"><%= page.title %></a></li>
+                    <% } %>
+                <% }); %>
+            </ul>
+
+            <form action="/products/all" method="GET" class="form-inline" style="margin-left: 5%; ">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="search" placeholder="Search..." style="width: 350px;">
+                </div>
+                <button type="submit" class="btn btn-primary ml-1" >Search</button>
+            </form>
+
+            <ul class="navbar-nav nav ml-auto">
+                <li>
+                        <a href="/cart/checkout">Cart ( 
+                            <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                            <% } else {%>
+                                0
+                            <% } %>
+                        )</a>
+                </li>
+               
+                <% if (user) { %> 
+                    <li class="reg-log" style="color: white;">Hi <%= user.username %> <a href="/users/logout">(Dang xuat)</a></li>
+                <% } else { %>
+                    <li class="reg-log"><a href="/users/register">Dang ky</a></li>
+                    <li class="reg-log"><a href="/users/login">Dang nhap</a></li>
+                <% } %>
+                    
+                <% if (user && user.admin == 1) { %> 
+                    <li class="reg-log"><a href="/admin/pages">Trang Admin</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

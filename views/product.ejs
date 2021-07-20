@@ -1,0 +1,28 @@
+<%- include ('./_layouts/header') %>
+
+    <div class="row">
+        <div class="col-xs 12 col-md-5">
+            <img src="/product_images/<%= hoa._id %>/<%= hoa.image %>" alt="<%= hoa.title %>" class="spi">
+        </div>
+        <div class="col-xs-12 col-md-5">
+            <h2><%= hoa.title %></h2>
+            <p>Description: <%= hoa.description %></p>
+            <p>Price: <%= hoa.price %> VND </p>
+
+            <% if (loggedIn) { %> 
+                <p><a href="/cart/add/<%= hoa.slug %>">
+                    <button class="btn btn-primary">
+                        Thêm vào giỏ hàng
+                    </button></a></p>
+            <% } else { %>
+                <h4 class="text-warning">Vui lòng đăng nhập để đặt hàng bạn nhé!</h4>
+                <p><a href="/users/login">
+                    <button class="btn btn-primary">
+                        Đăng nhập
+                    </button></a></p>
+            <% } %>
+
+        </div>
+    </div>
+
+<%- include ('./_layouts/footer') %>

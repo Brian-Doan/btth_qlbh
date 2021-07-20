@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/admin_style.css">
+    </head>
+    <body>
+        <%- include ('../_partials/page_banner.ejs') %>
+
+        <%- include ('../_partials/head_navbar.ejs') %>
+
+        <div class="container" style="max-width: 90%;">
+
+            <%- messages('messages', locals) %>
+            <% if (errors) { %>
+                <% errors.forEach((error) => { %>
+                    <div class="alert alert-error">
+                        <%= msg %>
+                    </div>
+                <% }); %>
+            <% } %>
+        
+            <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <h3>Danh muc hoa</h3>
+                    <ul class="list-group">
+                        <% loaihoa.forEach((cat) => { %>
+                            <li class="list-group-item"><a href="/products/<%= cat.slug %>"><%= cat.title %></a></li>
+                        <% }); %>
+                    </ul>
+                </div>           
+
+                <div class="col-xs-12 col-md-10">
+
+                
+          
+   

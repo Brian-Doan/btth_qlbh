@@ -1,0 +1,172 @@
+header {
+    background-image: url('/images/top.jpg');
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+.header-banner {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.reg-log {
+    padding-left: 25px;
+}
+
+img.pimage {
+    width: 150px;
+    height: 150px;
+}
+
+a.pa {
+    display: inline-block;
+    height: 150px;
+}
+
+.row.products .p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.priceColor {
+    color: red;
+}
+
+img.spi {
+    width: 100%;
+    margin-right: auto;
+}
+
+ul.gallery li {
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+}
+
+img.cpi {
+    width: 100px;
+}
+
+table.align-mid td {
+    vertical-align: middle !important;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+/* CSS for autoslider */
+.auto-sliding {
+    width: 750px;
+    height: 200px;
+    margin: auto;
+}
+
+.auto-sliding .go-to-shop-btn {
+    width: 20%;
+    height: 100%;
+    background: lightcyan;
+    cursor: pointer;
+    border: none;
+    float: left;
+    font-size:25px;
+    font-weight: bold;
+    color: black;
+    padding: 30px 20px;
+}
+
+.auto-sliding .go-to-shop-btn:hover {
+    width: 150px;
+    height: 100%;
+    background: rgb(114, 231, 231);
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+
+.mySlides_1, .mySlides_2, .mySlides_3 {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.autoSlider_1 {
+    grid-area: slider_1;
+}
+
+.autoSlider_2 {
+    grid-area: slider_2;
+}
+
+.autoSlider_3 {
+    grid-area: slider_3;
+}
+
+.slideshow-container {
+    display: grid;
+    grid-template-areas: 'slider_1 slider_2 slider_3 .';
+    width: 450px;
+    height: 200px;
+    position: relative;
+}
+
+/* CSS for Caption text */
+.text {
+    font-size: 20px;
+    font-weight: bolder;
+    background: lightcyan;
+    height: 35px;
+}
+
+.hide {
+    display: none;
+}
+
+.show_Caption:hover + .hide {
+    display: block;
+    color: red;
+}
+
+.banner-img{
+    width: 150px;
+    height: 200px;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}

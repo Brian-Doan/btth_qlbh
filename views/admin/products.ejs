@@ -1,0 +1,43 @@
+<%- include ('../_layouts/admin_header') %>
+
+    <h2 class="page-title">Quan ly hoa</h2>
+    <a href="/admin/products/add-product" class="btn btn-primary">Them hoa moi</a>
+    <br><br>
+
+    <% if (count > 0) { %>
+
+        <table class="table table-stripped align-mid">
+            <thead>
+                <tr class="home">
+                    <th>Ten hoa</th>
+                    <th>Don gia</th>
+                    <th>Loai hoa</th>
+                    <th>Hinh anh</th>
+                    <th>Sua</th>
+                    <th>Xoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% hoas.forEach((hoa) => { %>
+                    <tr>
+                        <td><%= hoa.title %></td>
+                        <td><%= parseFloat(hoa.price) %> VND</td>
+                        <td><%= hoa.category %></td>
+                        <td>
+                            <% if (hoa.image == "") { %>
+                                <img id="noImg" src="/images/noimage.png" alt="">
+                            <% } else { %> 
+                                <img id="noImg" src="/product_images/<%= hoa._id %>/<%= hoa.image %>" alt="">
+                            <% } %>
+                        </td>
+                        <td><a href="products/edit-product/<%= hoa._id %>">Sua</a></td>
+                        <td><a class="confirmDelete" href="products/delete-product/<%= hoa.id %>">Xoa</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <h3 class="text-center"> Chua co san pham hoa nao</h3>
+    <% } %>
+    
+<%- include ('../_layouts/admin_footer') %>
